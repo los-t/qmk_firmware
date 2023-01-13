@@ -32,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
      /* MID { * . . . .   . . . . . } */ KC_A,
      /* MID { . * . . .   . . . . . } */ KC_S,
-     /* MID { . . * . .   . . . . . } */ KC_S,
+     /* MID { . . * . .   . . . . . } */ KC_D,
      /* MID { . . . * .   . . . . . } */ KC_F,
      /* MID { . . . . *   . . . . . } */ KC_G,
      /* MID { . . . . .   * . . . . } */ KC_H,
@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
      /* TMB {       * .   . .       } */ LT(LYR_MISC, KC_ESC),
      /* TMB {       . *   . .       } */ LT(LYR_SYMBOLS, KC_BSPC),
-     /* TMB {       . .   * .       } */ LT(LYR_SYMBOLS, KC_RETURN),
+     /* TMB {       . .   * .       } */ LT(LYR_SYMBOLS, KC_ENT),
      /* TMB {       . .   . *       } */ LT(LYR_MISC, KC_SPC)
   ),
 	[LYR_SYMBOLS] = LAYOUT(
@@ -132,10 +132,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      /* BTM { . . . . .   . . . * . } */  KC_R,
      /* BTM { . . . . .   . . . . * } */  KC_RSFT,
                                          
-     /* TMB {       * .   . .       } */  KC_BSPC,
-     /* TMB {       . *   . .       } */  KC_NO,
-     /* TMB {       . .   * .       } */  KC_NO,
-     /* TMB {       . .   . *       } */  KC_SPC
+     /* TMB {       * .   . .       } */  KC_NO,
+     /* TMB {       . *   . .       } */  KC_BSPC,
+     /* TMB {       . .   * .       } */  KC_ENT,
+     /* TMB {       . .   . *       } */  KC_NO
   ),
 };
 // clang-format on
