@@ -14,7 +14,7 @@ enum layer_names {
   LYR_COLEMAK,
   LYR_SYMBOLS,
   LYR_GUI,
-  LYR_ALWAYS_ACCESSIBLE,
+  LYR_UTIL,
 };
 
 
@@ -54,10 +54,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* BTM { . . . . .   . . . * . } */ RALT_T(KC_DOT),
     /* BTM { . . . . .   . . . . * } */ RSFT_T(KC_SLSH),
 
-    /* TMB {       * .   . .       } */ KC_ESC,
-    /* TMB {       . *   . .       } */ LT(LYR_ALWAYS_ACCESSIBLE, KC_BSPC),
-    /* TMB {       . .   * .       } */ LT(LYR_ALWAYS_ACCESSIBLE, KC_SPC),
-    /* TMB {       . .   . *       } */ KC_ENT
+    /* TMB {       * .   . .       } */ KC_NO,
+    /* TMB {       . *   . .       } */ LT(LYR_UTIL, KC_BSPC),
+    /* TMB {       . .   * .       } */ LT(LYR_UTIL, KC_SPC),
+    /* TMB {       . .   . *       } */ KC_NO
   ),
   [LYR_COLEMAK] = LAYOUT(
     /* TOP { * . . . .   . . . . . } */ KC_Q,
@@ -93,10 +93,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* BTM { . . . . .   . . . * . } */ RALT_T(KC_DOT),
     /* BTM { . . . . .   . . . . * } */ RSFT_T(KC_SLSH),
 
-    /* TMB {       * .   . .       } */ KC_ESC,
-    /* TMB {       . *   . .       } */ LT(LYR_ALWAYS_ACCESSIBLE, KC_BSPC),
-    /* TMB {       . .   * .       } */ LT(LYR_ALWAYS_ACCESSIBLE, KC_SPC),
-    /* TMB {       . .   . *       } */ KC_ENT
+    /* TMB {       * .   . .       } */ KC_NO,
+    /* TMB {       . *   . .       } */ LT(LYR_UTIL, KC_BSPC),
+    /* TMB {       . .   * .       } */ LT(LYR_UTIL, KC_SPC),
+    /* TMB {       . .   . *       } */ KC_NO
   ),
   [LYR_SYMBOLS] = LAYOUT(
     /* TOP { * . . . .   . . . . . } */ KC_GRV,
@@ -172,47 +172,47 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* BTM { . . . . .   . . . . * } */ LSFT_T(KC_NO),
 
     /* TMB {       * .   . .       } */ KC_NO,
-    /* TMB {       . *   . .       } */ KC_NO,
-    /* TMB {       . .   * .       } */ KC_NO,
+    /* TMB {       . *   . .       } */ KC_TRNS,
+    /* TMB {       . .   * .       } */ KC_TRNS,
     /* TMB {       . .   . *       } */ KC_NO
   ),
-  [LYR_ALWAYS_ACCESSIBLE] = LAYOUT(
-    /* TOP { * . . . .   . . . . . } */ KC_NO,
-    /* TOP { . * . . .   . . . . . } */ KC_TAB,
-    /* TOP { . . * . .   . . . . . } */ KC_ESC,
-    /* TOP { . . . * .   . . . . . } */ KC_ENT,
+  [LYR_UTIL] = LAYOUT(
+    /* TOP { * . . . .   . . . . . } */ KC_TAB,
+    /* TOP { . * . . .   . . . . . } */ KC_NO,
+    /* TOP { . . * . .   . . . . . } */ KC_NO,
+    /* TOP { . . . * .   . . . . . } */ KC_NO,
     /* TOP { . . . . *   . . . . . } */ KC_NO,
     /* TOP { . . . . .   * . . . . } */ KC_NO,
-    /* TOP { . . . . .   . * . . . } */ KC_ENT,
-    /* TOP { . . . . .   . . * . . } */ KC_ESC,
-    /* TOP { . . . . .   . . . * . } */ KC_TAB,
-    /* TOP { . . . . .   . . . . * } */ KC_NO,
+    /* TOP { . . . . .   . * . . . } */ KC_NO,
+    /* TOP { . . . . .   . . * . . } */ KC_NO,
+    /* TOP { . . . . .   . . . * . } */ KC_NO,
+    /* TOP { . . . . .   . . . . * } */ KC_DEL,
 
-    /* MID { * . . . .   . . . . . } */ LCTL_T(KC_TAB),
-    /* MID { . * . . .   . . . . . } */ KC_LGUI,
-    /* MID { . . * . .   . . . . . } */ KC_S,
+    /* MID { * . . . .   . . . . . } */ LCTL_T(KC_ESC),
+    /* MID { . * . . .   . . . . . } */ KC_NO,
+    /* MID { . . * . .   . . . . . } */ KC_NO,
     /* MID { . . . * .   . . . . . } */ KC_NO,
     /* MID { . . . . *   . . . . . } */ KC_NO,
     /* MID { . . . . .   * . . . . } */ KC_LEFT,
     /* MID { . . . . .   . * . . . } */ KC_DOWN,
     /* MID { . . . . .   . . * . . } */ KC_UP,
     /* MID { . . . . .   . . . * . } */ KC_RGHT,
-    /* MID { . . . . .   . . . . * } */ RCTL_T(KC_TAB),
+    /* MID { . . . . .   . . . . * } */ RCTL_T(KC_ENT),
 
     /* BTM { * . . . .   . . . . . } */ LSFT_T(KC_NO),
-    /* BTM { . * . . .   . . . . . } */ LALT_T(KC_APP),
-    /* BTM { . . * . .   . . . . . } */ KC_SPC,
-    /* BTM { . . . * .   . . . . . } */ LGUI_T(KC_NO),
+    /* BTM { . * . . .   . . . . . } */ LALT_T(KC_NO),
+    /* BTM { . . * . .   . . . . . } */ KC_NO,
+    /* BTM { . . . * .   . . . . . } */ LGUI_T(KC_APP),
     /* BTM { . . . . *   . . . . . } */ KC_NO,
     /* BTM { . . . . .   * . . . . } */ KC_NO,
-    /* BTM { . . . . .   . * . . . } */ RGUI_T(KC_NO),
-    /* BTM { . . . . .   . . * . . } */ KC_SPC,
-    /* BTM { . . . . .   . . . * . } */ RALT_T(KC_APP),
+    /* BTM { . . . . .   . * . . . } */ RGUI_T(KC_APP),
+    /* BTM { . . . . .   . . * . . } */ KC_NO,
+    /* BTM { . . . . .   . . . * . } */ RALT_T(KC_NO),
     /* BTM { . . . . .   . . . . * } */ RSFT_T(KC_NO),
 
     /* TMB {       * .   . .       } */ KC_NO,
-    /* TMB {       . *   . .       } */ KC_NO,
-    /* TMB {       . .   * .       } */ KC_NO,
+    /* TMB {       . *   . .       } */ KC_TRNS,
+    /* TMB {       . .   * .       } */ KC_TRNS,
     /* TMB {       . .   . *       } */ KC_NO
   ),
 };
