@@ -8,7 +8,7 @@
 /* TMB {       . .   . .       } */
 
 // TODO:
-// + home row mods: Shift Alt Gui Ctrl
+// - home row mods: Shift Alt Gui Ctrl
 // - layers to thumbs
 // - I also need symbols more often than navigation...
 // - Colemak toggle
@@ -41,16 +41,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* TOP { . . . . .   . . . * . } */ KC_O,
     /* TOP { . . . . .   . . . . * } */ KC_P,
 
-    /* MID { * . . . .   . . . . . } */ LSFT_T(KC_A),
+    /* MID { * . . . .   . . . . . } */ LCTL_T(KC_A),
     /* MID { . * . . .   . . . . . } */ LALT_T(KC_S),
     /* MID { . . * . .   . . . . . } */ LGUI_T(KC_D),
-    /* MID { . . . * .   . . . . . } */ LCTL_T(KC_F),
+    /* MID { . . . * .   . . . . . } */ LSFT_T(KC_F),
     /* MID { . . . . *   . . . . . } */ KC_G,
     /* MID { . . . . .   * . . . . } */ KC_H,
-    /* MID { . . . . .   . * . . . } */ RCTL_T(KC_J),
+    /* MID { . . . . .   . * . . . } */ RSFT_T(KC_J),
     /* MID { . . . . .   . . * . . } */ RGUI_T(KC_K),
     /* MID { . . . . .   . . . * . } */ LALT_T(KC_L),
-    /* MID { . . . . .   . . . . * } */ RSFT_T(KC_SCLN),
+    /* MID { . . . . .   . . . . * } */ RCTL_T(KC_SCLN),
 
     /* BTM { * . . . .   . . . . . } */ KC_Z,
     /* BTM { . * . . .   . . . . . } */ KC_X,
@@ -80,16 +80,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* TOP { . . . . .   . . . * . } */ KC_Y,
     /* TOP { . . . . .   . . . . * } */ KC_SCLN,
 
-    /* MID { * . . . .   . . . . . } */ LSFT_T(KC_A),
+    /* MID { * . . . .   . . . . . } */ LCTL_T(KC_A),
     /* MID { . * . . .   . . . . . } */ LALT_T(KC_R),
     /* MID { . . * . .   . . . . . } */ LGUI_T(KC_S),
-    /* MID { . . . * .   . . . . . } */ LCTL_T(KC_T),
+    /* MID { . . . * .   . . . . . } */ LSFT_T(KC_T),
     /* MID { . . . . *   . . . . . } */ KC_G,
     /* MID { . . . . .   * . . . . } */ KC_M,
-    /* MID { . . . . .   . * . . . } */ RCTL_T(KC_N),
+    /* MID { . . . . .   . * . . . } */ RSFT_T(KC_N),
     /* MID { . . . . .   . . * . . } */ RGUI_T(KC_E),
     /* MID { . . . . .   . . . * . } */ LALT_T(KC_I),
-    /* MID { . . . . .   . . . . * } */ RSFT_T(KC_O),
+    /* MID { . . . . .   . . . . * } */ RCTL_T(KC_O),
 
     /* BTM { * . . . .   . . . . . } */ KC_Z,
     /* BTM { . * . . .   . . . . . } */ KC_X,
@@ -197,16 +197,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* TOP { . . . . .   . . . * . } */ KC_NO,
     /* TOP { . . . . .   . . . . * } */ KC_DEL,
 
-    /* MID { * . . . .   . . . . . } */ LSFT_T(KC_ESC),
-    /* MID { . * . . .   . . . . . } */ LALT_T(KC_TAB),
-    /* MID { . . * . .   . . . . . } */ LGUI_T(KC_ESC),
-    /* MID { . . . * .   . . . . . } */ LCTL_T(KC_ENT),
-    /* MID { . . . . *   . . . . . } */ CL_TOGG
+    /* MID { * . . . .   . . . . . } */ LCTL_T(KC_ESC),
+    /* MID { . * . . .   . . . . . } */ LALT_T(KC_NO),
+    /* MID { . . * . .   . . . . . } */ LGUI_T(KC_NO),
+    /* MID { . . . * .   . . . . . } */ LSFT_T(KC_NO),
+    /* MID { . . . . *   . . . . . } */ KC_NO,
     /* MID { . . . . .   * . . . . } */ KC_LEFT,
-    /* MID { . . . . .   . * . . . } */ RCTL_T(KC_DOWN),
+    /* MID { . . . . .   . * . . . } */ RSFT_T(KC_DOWN),
     /* MID { . . . . .   . . * . . } */ RGUI_T(KC_UP),
     /* MID { . . . . .   . . . * . } */ LALT_T(KC_RGHT),
-    /* MID { . . . . .   . . . . * } */ RSFT_T(KC_ENT),
+    /* MID { . . . . .   . . . . * } */ RCTL_T(KC_ENT),
 
     /* BTM { * . . . .   . . . . . } */ KC_NO,
     /* BTM { . * . . .   . . . . . } */ KC_NO,
