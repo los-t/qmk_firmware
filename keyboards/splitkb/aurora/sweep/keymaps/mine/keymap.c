@@ -16,6 +16,8 @@
 // - CAPSWORD
 // - cut/copy/paste keys to util layer
 // - I do need ctrl-enter shortcut somewhere (for now compensated with mods on util layer)
+// - alt space is no good, when alt is on home row (silently makes vim unusable,
+//   because it switches layouts)
 
 /* Defines names for use in layer keycodes and the keymap */
 enum layer_names {
@@ -147,7 +149,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* TMB {       . .   . *       } */ KC_NO
   ),
   [LYR_GUI] = LAYOUT(
-    /* TOP { * . . . .   . . . . . } */ CW_TOGG,
+    /* TOP { * . . . .   . . . . . } */ KC_NO,
     /* TOP { . * . . .   . . . . . } */ KC_F1,
     /* TOP { . . * . .   . . . . . } */ KC_F2,
     /* TOP { . . . * .   . . . . . } */ KC_F3,
@@ -201,7 +203,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* MID { . * . . .   . . . . . } */ LALT_T(KC_TAB),
     /* MID { . . * . .   . . . . . } */ LGUI_T(KC_ESC),
     /* MID { . . . * .   . . . . . } */ LSFT_T(KC_ENT),
-    /* MID { . . . . *   . . . . . } */ KC_NO,
+    /* MID { . . . . *   . . . . . } */ CW_TOGG,
     /* MID { . . . . .   * . . . . } */ KC_LEFT,
     /* MID { . . . . .   . * . . . } */ RSFT_T(KC_DOWN),
     /* MID { . . . . .   . . * . . } */ RGUI_T(KC_UP),
