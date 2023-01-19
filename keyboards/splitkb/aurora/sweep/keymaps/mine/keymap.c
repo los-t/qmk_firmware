@@ -8,11 +8,11 @@
 /* TMB {       . .   . .       } */
 
 // TODO:
-// - home row mods: Shift Alt Gui Ctrl
+// + home row mods: Shift Alt Gui Ctrl
 // - layers to thumbs
 // - I also need symbols more often than navigation...
 // - Colemak toggle
-// - move esc/enter/tab to better positions (where? combos?)
+// + move esc/enter/tab to better positions (where? combos?)
 // - CAPSWORD
 // - cut/copy/paste keys to util layer
 // - I do need ctrl-enter shortcut somewhere (for now compensated with mods on util layer)
@@ -186,7 +186,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* TMB {       . .   . *       } */ KC_TRNS
   ),
   [LYR_UTIL] = LAYOUT(
-    /* TOP { * . . . .   . . . . . } */ KC_TAB,
+    /* TOP { * . . . .   . . . . . } */ KC_NO,
     /* TOP { . * . . .   . . . . . } */ KC_NO,
     /* TOP { . . * . .   . . . . . } */ KC_NO,
     /* TOP { . . . * .   . . . . . } */ KC_NO,
@@ -195,12 +195,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* TOP { . . . . .   . * . . . } */ KC_NO,
     /* TOP { . . . . .   . . * . . } */ KC_NO,
     /* TOP { . . . . .   . . . * . } */ KC_NO,
-    /* TOP { . . . . .   . . . . * } */ KC_DEL,
+    /* TOP { . . . . .   . . . . * } */ KC_NO,
 
-    /* MID { * . . . .   . . . . . } */ LCTL_T(KC_ESC),
-    /* MID { . * . . .   . . . . . } */ LALT_T(KC_NO),
-    /* MID { . . * . .   . . . . . } */ LGUI_T(KC_NO),
-    /* MID { . . . * .   . . . . . } */ LSFT_T(KC_NO),
+    /* MID { * . . . .   . . . . . } */ LCTL_T(KC_NO),
+    /* MID { . * . . .   . . . . . } */ LALT_T(KC_TAB),
+    /* MID { . . * . .   . . . . . } */ LGUI_T(KC_ESC),
+    /* MID { . . . * .   . . . . . } */ LSFT_T(KC_ENT),
     /* MID { . . . . *   . . . . . } */ KC_NO,
     /* MID { . . . . .   * . . . . } */ KC_LEFT,
     /* MID { . . . . .   . * . . . } */ RSFT_T(KC_DOWN),
@@ -211,10 +211,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* BTM { * . . . .   . . . . . } */ KC_NO,
     /* BTM { . * . . .   . . . . . } */ KC_NO,
     /* BTM { . . * . .   . . . . . } */ KC_NO,
-    /* BTM { . . . * .   . . . . . } */ KC_APP,
+    /* BTM { . . . * .   . . . . . } */ KC_NO,
     /* BTM { . . . . *   . . . . . } */ KC_NO,
     /* BTM { . . . . .   * . . . . } */ KC_NO,
-    /* BTM { . . . . .   . * . . . } */ KC_APP,
+    /* BTM { . . . . .   . * . . . } */ KC_NO,
     /* BTM { . . . . .   . . * . . } */ KC_NO,
     /* BTM { . . . . .   . . . * . } */ KC_NO,
     /* BTM { . . . . .   . . . . * } */ KC_NO,
