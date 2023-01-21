@@ -29,6 +29,21 @@ enum layer_names {
 };
 
 
+enum key_combos {
+  CMB_DF_ESC,
+  CMB_JK_ENTER,
+
+  CMB_TOTAL
+};
+uint16_t COMBO_LEN = CMB_TOTAL;
+const uint16_t PROGMEM cmb_df[] = {LGUI_T(KC_D), LSFT_T(KC_F), COMBO_END};
+const uint16_t PROGMEM cmb_jk[] = {RSFT_T(KC_J), RGUI_T(KC_K), COMBO_END};
+combo_t key_combos[] = {
+  [CMB_DF_ESC] = COMBO(cmb_df, KC_ESC),
+  [CMB_JK_ENTER] = COMBO(cmb_jk, KC_ENT),
+};
+
+
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LYR_QWERTY] = LAYOUT(
