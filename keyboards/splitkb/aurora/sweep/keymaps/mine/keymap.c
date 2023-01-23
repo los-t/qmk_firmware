@@ -9,13 +9,13 @@
 
 // TODO:
 // + home row mods: Shift Alt Gui Ctrl
-// - layers to thumbs
-// - I also need symbols more often than navigation...
-// - Colemak toggle
+// + layers to thumbs
+// + I also need symbols more often than navigation...
+// + Colemak toggle
 // + move esc/enter/tab to better positions (where? combos?)
-// - CAPSWORD
+// + CAPSWORD
 // - cut/copy/paste keys to util layer
-// - I do need ctrl-enter shortcut somewhere (for now compensated with mods on util layer)
+// + I do need ctrl-enter shortcut somewhere (for now compensated with mods on util layer)
 // - alt space is no good, when alt is on home row (silently makes vim unusable,
 //   because it switches layouts)
 
@@ -207,7 +207,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* TOP { . * . . .   . . . . . } */ KC_NO,
     /* TOP { . . * . .   . . . . . } */ KC_NO,
     /* TOP { . . . * .   . . . . . } */ KC_NO,
-    /* TOP { . . . . *   . . . . . } */ KC_NO,
+    /* TOP { . . . . *   . . . . . } */ DF(0),
     /* TOP { . . . . .   * . . . . } */ KC_LCBR,
     /* TOP { . . . . .   . * . . . } */ KC_LPRN,
     /* TOP { . . . . .   . . * . . } */ KC_RPRN,
@@ -218,7 +218,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* MID { . * . . .   . . . . . } */ LALT_T(KC_NO),
     /* MID { . . * . .   . . . . . } */ LGUI_T(KC_NO),
     /* MID { . . . * .   . . . . . } */ LSFT_T(KC_NO),
-    /* MID { . . . . *   . . . . . } */ KC_NO,
+    /* MID { . . . . *   . . . . . } */ DF(1),
     /* MID { . . . . .   * . . . . } */ KC_LEFT,
     /* MID { . . . . .   . * . . . } */ RSFT_T(KC_DOWN),
     /* MID { . . . . .   . . * . . } */ RGUI_T(KC_UP),
