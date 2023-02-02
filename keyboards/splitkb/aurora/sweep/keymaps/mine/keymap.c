@@ -32,15 +32,24 @@ enum layer_names {
 enum key_combos {
   CMB_DF_ESC,
   CMB_JK_ENTER,
+  CMB_QWE_DF0,
+  CMB_QWF_DF1,
+  CMB_LSCLN_CAPSWORD,
 
   CMB_TOTAL
 };
 uint16_t COMBO_LEN = CMB_TOTAL;
 const uint16_t PROGMEM cmb_df[] = {LGUI_T(KC_D), LSFT_T(KC_F), COMBO_END};
 const uint16_t PROGMEM cmb_jk[] = {RSFT_T(KC_J), RGUI_T(KC_K), COMBO_END};
+const uint16_t PROGMEM cmb_qwe[] = {KC_Q, KC_W, KC_E, COMBO_END};
+const uint16_t PROGMEM cmb_qwf[] = {KC_Q, KC_W, LSFT_T(KC_F), COMBO_END};
+const uint16_t PROGMEM cmb_lscln[] = {LALT_T(KC_L), RCTL_T(KC_SCLN), COMBO_END};
 combo_t key_combos[] = {
   [CMB_DF_ESC] = COMBO(cmb_df, KC_ESC),
   [CMB_JK_ENTER] = COMBO(cmb_jk, KC_ENT),
+  [CMB_QWE_DF0] = COMBO(cmb_qwe, DF(0)),
+  [CMB_QWF_DF1] = COMBO(cmb_qwf, DF(1)),
+  [CMB_LSCLN_CAPSWORD] = COMBO(cmb_lscln, CW_TOGG),
 };
 
 
@@ -207,7 +216,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* TOP { . * . . .   . . . . . } */ KC_NO,
     /* TOP { . . * . .   . . . . . } */ KC_LT,
     /* TOP { . . . * .   . . . . . } */ KC_GT,
-    /* TOP { . . . . *   . . . . . } */ DF(0),
+    /* TOP { . . . . *   . . . . . } */ KC_NO,
     /* TOP { . . . . .   * . . . . } */ KC_LCBR,
     /* TOP { . . . . .   . * . . . } */ KC_LPRN,
     /* TOP { . . . . .   . . * . . } */ KC_RPRN,
@@ -218,14 +227,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* MID { . * . . .   . . . . . } */ LALT_T(KC_NO),
     /* MID { . . * . .   . . . . . } */ LGUI_T(KC_LBRC),
     /* MID { . . . * .   . . . . . } */ LSFT_T(KC_RBRC),
-    /* MID { . . . . *   . . . . . } */ DF(1),
+    /* MID { . . . . *   . . . . . } */ KC_NO,
     /* MID { . . . . .   * . . . . } */ KC_LEFT,
     /* MID { . . . . .   . * . . . } */ RSFT_T(KC_DOWN),
     /* MID { . . . . .   . . * . . } */ RGUI_T(KC_UP),
     /* MID { . . . . .   . . . * . } */ LALT_T(KC_RGHT),
     /* MID { . . . . .   . . . . * } */ RCTL_T(KC_QUOT),
 
-    /* BTM { * . . . .   . . . . . } */ CW_TOGG,
+    /* BTM { * . . . .   . . . . . } */ KC_NO,
     /* BTM { . * . . .   . . . . . } */ KC_NO,
     /* BTM { . . * . .   . . . . . } */ KC_NO,
     /* BTM { . . . * .   . . . . . } */ KC_NO,
