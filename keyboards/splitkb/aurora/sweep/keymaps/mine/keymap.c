@@ -53,6 +53,32 @@ combo_t key_combos[] = {
 };
 
 
+enum custom_keycodes {
+  MYKC_WIN_TAB = SAFE_RANGE,
+  MYKC_WIN_DESK_LEFT,
+  MYKC_WIN_DESK_RIGHT,
+  // TODO: MYKC_ALT_TAB,
+};
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  if (record->event.pressed)
+    switch (keycode) {
+      case MYKC_WIN_TAB:
+        SEND_STRING(SS_DOWN(X_LGUI) SS_TAP(X_TAB) SS_UP(X_LGUI));
+        break;
+
+      case MYKC_WIN_DESK_LEFT:
+        SEND_STRING(SS_DOWN(X_LGUI) SS_DOWN(X_LCTL) SS_TAP(X_LEFT) SS_UP(X_LCTL) SS_UP(X_LGUI));
+        break;
+
+      case MYKC_WIN_DESK_RIGHT:
+        SEND_STRING(SS_DOWN(X_LGUI) SS_DOWN(X_LCTL) SS_TAP(X_RIGHT) SS_UP(X_LCTL) SS_UP(X_LGUI));
+        break;
+    }
+
+  return true;
+}
+
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LYR_QWERTY] = LAYOUT(
@@ -217,10 +243,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* TOP { . . * . .   . . . . . } */ KC_NO,
     /* TOP { . . . * .   . . . . . } */ KC_NO,
     /* TOP { . . . . *   . . . . . } */ KC_NO,
-    /* TOP { . . . . .   * . . . . } */ KC_NO,
+    /* TOP { . . . . .   * . . . . } */ MYKC_WIN_DESK_LEFT,
     /* TOP { . . . . .   . * . . . } */ KC_NO,
-    /* TOP { . . . . .   . . * . . } */ KC_NO,
-    /* TOP { . . . . .   . . . * . } */ KC_NO,
+    /* TOP { . . . . .   . . * . . } */ MYKC_WIN_TAB,
+    /* TOP { . . . . .   . . . * . } */ MYKC_WIN_DESK_RIGHT,
     /* TOP { . . . . .   . . . . * } */ KC_NO,
 
     /* MID { * . . . .   . . . . . } */ KC_TAB,

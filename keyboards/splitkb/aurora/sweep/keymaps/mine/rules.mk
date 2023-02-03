@@ -1,6 +1,7 @@
 CAPS_WORD_ENABLE = yes
 NKRO_ENABLE = yes
 COMBO_ENABLE = yes
+SEND_STRING_ENABLE = yes
 
 # Override Aurora Sweep defaults that I don't use
 MOUSEKEY_ENABLE = no
