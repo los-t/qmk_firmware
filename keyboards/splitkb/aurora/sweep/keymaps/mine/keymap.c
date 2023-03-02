@@ -57,6 +57,8 @@ enum custom_keycodes {
   MYKC_WIN_TAB = SAFE_RANGE,
   MYKC_WIN_DESK_LEFT,
   MYKC_WIN_DESK_RIGHT,
+  MYKC_LANG_EN, //LALT_SHIFT_0,
+  MYKC_LANG_RU, //LALT_SHIFT_1,
   // TODO: MYKC_ALT_TAB,
 };
 
@@ -73,6 +75,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
       case MYKC_WIN_DESK_RIGHT:
         SEND_STRING(SS_DOWN(X_LGUI) SS_DOWN(X_LCTL) SS_TAP(X_RIGHT) SS_UP(X_LCTL) SS_UP(X_LGUI));
+        break;
+
+      case MYKC_LANG_EN:
+        SEND_STRING(SS_DOWN(X_LALT) SS_DOWN(X_LSFT) SS_TAP(X_0) SS_UP(X_LSFT) SS_UP(X_LALT));
+        break;
+
+      case MYKC_LANG_RU:
+        SEND_STRING(SS_DOWN(X_LALT) SS_DOWN(X_LSFT) SS_TAP(X_1) SS_UP(X_LSFT) SS_UP(X_LALT));
         break;
     }
 
@@ -249,7 +259,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* TOP { . . . . .   . . . * . } */ MYKC_WIN_DESK_RIGHT,
     /* TOP { . . . . .   . . . . * } */ KC_NO,
 
-    /* MID { * . . . .   . . . . . } */ KC_TAB,
+    /* MID { * . . . .   . . . . . } */ MYKC_LANG_EN,
     /* MID { . * . . .   . . . . . } */ KC_NO,
     /* MID { . . * . .   . . . . . } */ KC_NO,
     /* MID { . . . * .   . . . . . } */ KC_NO,
@@ -260,14 +270,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* MID { . . . . .   . . . * . } */ LALT_T(KC_RGHT),
     /* MID { . . . . .   . . . . * } */ RCTL_T(KC_NO),
 
-    /* BTM { * . . . .   . . . . . } */ KC_NO,
+    /* BTM { * . . . .   . . . . . } */ MYKC_LANG_RU,
     /* BTM { . * . . .   . . . . . } */ KC_NO,
-    /* BTM { . . * . .   . . . . . } */ KC_NO,
+    /* BTM { . . * . .   . . . . . } */ KC_LGUI,
     /* BTM { . . . * .   . . . . . } */ KC_NO,
     /* BTM { . . . . *   . . . . . } */ KC_NO,
-    /* BTM { . . . . .   * . . . . } */ KC_LGUI,
+    /* BTM { . . . . .   * . . . . } */ KC_NO,
     /* BTM { . . . . .   . * . . . } */ KC_NO,
-    /* BTM { . . . . .   . . * . . } */ KC_NO,
+    /* BTM { . . . . .   . . * . . } */ KC_LGUI,
     /* BTM { . . . . .   . . . * . } */ KC_NO,
     /* BTM { . . . . .   . . . . * } */ KC_NO,
 
