@@ -39,11 +39,11 @@ enum key_combos {
   CMB_TOTAL
 };
 uint16_t COMBO_LEN = CMB_TOTAL;
-const uint16_t PROGMEM cmb_df[] = {LGUI_T(KC_D), LSFT_T(KC_F), COMBO_END};
-const uint16_t PROGMEM cmb_jk[] = {RSFT_T(KC_J), RGUI_T(KC_K), COMBO_END};
+const uint16_t PROGMEM cmb_df[] = {KC_D, LSFT_T(KC_F), COMBO_END};
+const uint16_t PROGMEM cmb_jk[] = {RSFT_T(KC_J), KC_K, COMBO_END};
 const uint16_t PROGMEM cmb_qwe[] = {KC_Q, KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM cmb_qwf[] = {KC_Q, KC_W, LSFT_T(KC_F), COMBO_END};
-const uint16_t PROGMEM cmb_lscln[] = {LALT_T(KC_L), RCTL_T(KC_SCLN), COMBO_END};
+const uint16_t PROGMEM cmb_lscln[] = {KC_L, RCTL_T(KC_SCLN), COMBO_END};
 combo_t key_combos[] = {
   [CMB_DF_ESC] = COMBO(cmb_df, KC_ESC),
   [CMB_JK_ENTER] = COMBO(cmb_jk, KC_ENT),
@@ -94,25 +94,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* TOP { . . . . .   . . . . * } */ KC_P,
 
     /* MID { * . . . .   . . . . . } */ LCTL_T(KC_A),
-    /* MID { . * . . .   . . . . . } */ LALT_T(KC_S),
-    /* MID { . . * . .   . . . . . } */ LGUI_T(KC_D),
+    /* MID { . * . . .   . . . . . } */ KC_S,
+    /* MID { . . * . .   . . . . . } */ KC_D,
     /* MID { . . . * .   . . . . . } */ LSFT_T(KC_F),
     /* MID { . . . . *   . . . . . } */ KC_G,
     /* MID { . . . . .   * . . . . } */ KC_H,
     /* MID { . . . . .   . * . . . } */ RSFT_T(KC_J),
-    /* MID { . . . . .   . . * . . } */ RGUI_T(KC_K),
-    /* MID { . . . . .   . . . * . } */ LALT_T(KC_L),
+    /* MID { . . . . .   . . * . . } */ KC_K,
+    /* MID { . . . . .   . . . * . } */ KC_L,
     /* MID { . . . . .   . . . . * } */ RCTL_T(KC_SCLN),
 
     /* BTM { * . . . .   . . . . . } */ KC_Z,
-    /* BTM { . * . . .   . . . . . } */ KC_X,
-    /* BTM { . . * . .   . . . . . } */ KC_C,
+    /* BTM { . * . . .   . . . . . } */ LALT_T(KC_X),
+    /* BTM { . . * . .   . . . . . } */ LGUI_T(KC_C),
     /* BTM { . . . * .   . . . . . } */ KC_V,
     /* BTM { . . . . *   . . . . . } */ KC_B,
     /* BTM { . . . . .   * . . . . } */ KC_N,
     /* BTM { . . . . .   . * . . . } */ KC_M,
-    /* BTM { . . . . .   . . * . . } */ KC_COMM,
-    /* BTM { . . . . .   . . . * . } */ KC_DOT,
+    /* BTM { . . . . .   . . * . . } */ LGUI_T(KC_COMM),
+    /* BTM { . . . . .   . . . * . } */ LALT_T(KC_DOT),
     /* BTM { . . . . .   . . . . * } */ KC_SLSH,
 
     /* TMB {       * .   . .       } */ LT(LYR_NAVIGATION, KC_DEL),
